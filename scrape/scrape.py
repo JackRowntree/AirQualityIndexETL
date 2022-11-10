@@ -1,4 +1,16 @@
+def check():
+	"""
+	Does scraping
+	"""
+	pass
+
 def scrape():
+	"""
+	Does scraping
+	"""
+	pass
+
+def load():
 	"""
 	Does scraping
 	"""

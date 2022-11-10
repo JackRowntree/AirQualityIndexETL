@@ -1,5 +1,5 @@
 from airflow.operators.bash import BashOperator
-from scrape import scrape
+from scrape import check,scrape,load
 from datetime import timedelta
 from airflow.utils.dates import days_ago
 # The DummyOperator is a task and does nothing   
