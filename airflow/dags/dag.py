@@ -1,9 +1,10 @@
-from airflow.operators.bash import BashOperator
-from scrape import check,scrape,load
+from airflow.operators.python import PythonOperator
+from airflow import DAG
+from scrape.scrape import check,scrape,load
 from datetime import timedelta
 from airflow.utils.dates import days_ago
 # The DummyOperator is a task and does nothing   
- default_args = {
+default_args = {
             'owner': 'airflow',    
             #'start_date': airflow.utils.dates.days_ago(2),
             # 'end_date': datetime(),
@@ -24,7 +25,7 @@ air_quality_dag = DAG(
 	schedule_interval='@once',	
 	dagrun_timeout=timedelta(minutes=60),
 	description='checks scrapes and loads air quality band data from url',
-	start_date = airflow.utils.dates.days_ago(1)
+	start_date = days_ago(1)
 	)
 
 check = PythonOperator(task_id='check', python_callable=check, dag=air_quality_dag)
