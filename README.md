@@ -1,11 +1,13 @@
 # AirQualityIndexETL (work in progress :D)
-A dataflow for up to date air quality index band data.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+A dataflow for up to date air quality index band data.
 
 ## Getting Started
 
-### Dependencies
+Only a working docker installation required. To run locally:
+* `cd ./airflow`
+* Follow the instructions under 'Initializing environment' at https://airflow.apache.org/docs/apache-airflow/2.0.1/start/docker.html
+* Then `docker-compose up`
 
